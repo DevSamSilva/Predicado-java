@@ -29,6 +29,10 @@ public class Produto {
         return p.getPreco() >= 100.0;
     }
 
+    public boolean naoStaticProdutoPredicado() {
+        return preco >= 100.0;
+    }
+
     @Override
     public String toString() {
         return "Produto [nome=" + nome + ", preco=" + preco + "]";

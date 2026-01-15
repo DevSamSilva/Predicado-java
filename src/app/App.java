@@ -14,8 +14,8 @@ public class App {
         list.add(new Produto("Taclet", 350.50));
         list.add(new Produto("Hd", 80.90));
 
-        // referencia para metodo
-        list.removeIf(Produto::staticProdutoPredicado);
+        // referencia para metodo usando metodo nao estatico
+        list.removeIf(Produto::naoStaticProdutoPredicado);
 
         for (Produto p : list) {
             System.out.println(p);
