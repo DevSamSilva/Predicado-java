@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Produto;
-import model.ProdutoPredicado;
 
 public class App {
     public static void main(String[] args) {
@@ -15,7 +14,8 @@ public class App {
         list.add(new Produto("Taclet", 350.50));
         list.add(new Produto("Hd", 80.90));
 
-        list.removeIf(new ProdutoPredicado());
+        // referencia para metodo
+        list.removeIf(Produto::staticProdutoPredicado);
 
         for (Produto p : list) {
             System.out.println(p);
