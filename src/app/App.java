@@ -2,6 +2,7 @@ package app;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import model.Produto;
 
@@ -14,8 +15,10 @@ public class App {
         list.add(new Produto("Taclet", 350.50));
         list.add(new Produto("Hd", 80.90));
 
-        // referencia para metodo usando metodo nao estatico
-        list.removeIf(Produto::naoStaticProdutoPredicado);
+        // expressao lambda declarada
+        Predicate<Produto> pred = p -> p.getPreco() >= 100.0;
+
+        list.removeIf(pred);
 
         for (Produto p : list) {
             System.out.println(p);
